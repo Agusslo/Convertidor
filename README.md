@@ -22,7 +22,8 @@ Convierte **fácil y rápido** entre distintos formatos, directo en tu navegador
 
 ## 🖼 Preview
 
-<img width="1243" height="832" alt="image" src="https://github.com/user-attachments/assets/1a083557-5e9b-48c1-babc-76d444a9f0a0" />
+<img width="1367" height="838" alt="image" src="https://github.com/user-attachments/assets/59f149dc-c2fc-44a2-aed8-0222c0b291c6" />
+
 
 ---
 
