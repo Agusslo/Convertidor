@@ -8,7 +8,8 @@ Convierte **fácil y rápido** entre distintos formatos, directo en tu navegador
 ## ✨ Funcionalidades
 
 - 📷 **Imágenes**  
-  - JPG ↔ PNG ↔ WEBP  
+  - JPG ↔ PNG ↔ WEBP
+  - - JPG & PNG ↔ ICO  
   - Imágenes → PDF (una o varias)
 
 - 📄 **Documentos**  
