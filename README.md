@@ -9,7 +9,7 @@ Convierte **fácil y rápido** entre distintos formatos, directo en tu navegador
 
 - 📷 **Imágenes**  
   - JPG ↔ PNG ↔ WEBP
-  - - JPG & PNG ↔ ICO  
+  - JPG & PNG ↔ ICO  
   - Imágenes → PDF (una o varias)
 
 - 📄 **Documentos**  
