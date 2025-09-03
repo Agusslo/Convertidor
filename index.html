@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Convierte Archivos — Aguss Tools</title>
+<link rel="stylesheet" href="styles.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+
+<!-- Librerías por CDN -->
+<script src="https://unpkg.com/mammoth/mammoth.browser.min.js"></script>
+<script src="https://unpkg.com/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+
+<!-- PDF.js (ESM) -->
+<script type="module">
+    import * as pdfjsLib from "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.min.mjs";
+    // Hacemos accesible la lib a app.js
+    window.pdfjsLib = pdfjsLib;
+    // Worker ESM desde CDN:
+    pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@4.7.76/build/pdf.worker.min.mjs";
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/showdown@2.1.0/dist/showdown.min.js"></script>
+</head>
+<body>
+<header class="hero">
+    <h1>Convierte Archivos</h1>
+    <p class="sub">JPG ↔ PNG ↔ WEBP · DOCX → PDF · IMG → PDF · PDF → IMG · TXT/MD → PDF</p>
+</header>
+
+<main class="container">
+    <section class="panel">
+    <div class="upload-area" id="dropArea">
+        <input id="fileInput" type="file" multiple />
+        <div class="upload-hint">
+        <svg viewBox="0 0 24 24" width="48" height="48" aria-hidden="true">
+            <path d="M12 16v-8m0 0l-3 3m3-3l3 3M4 16v2a2 2 0 002 2h12a2
+            2 0 002-2v-2"></path>
+        </svg>
+        <p><strong>Arrastrá</strong> tus archivos aquí o <span class="linklike" id="browseBtn">explorá</span></p>
+        <small>Se procesan en tu navegador. No subimos nada a servidores.</small>
+        </div>
+    </div>
+
+    <div class="controls">
+        <label for="targetFormat">Formato de salida</label>
+        <select id="targetFormat">
+        <option value="auto">Elegir automáticamente</option>
+        </select>
+
+        <div class="advanced">
+        <label>
+            Calidad (imágenes 0–1):
+            <input id="imgQuality" type="number" step="0.05" min="0" max="1" value="0.92" />
+        </label>
+        <label>
+            PDF: tamaño página
+            <select id="pdfPageSize">
+            <option value="a4">A4</option>
+            <option value="letter">Letter</option>
+            <option value="auto">Auto (imagen)</option>
+            </select>
+        </label>
+        </div>
+
+        <button id="convertBtn" class="primary">Convertir</button>
+    </div>
+    </section>
+
+    <section class="panel list">
+    <h2>Archivos cargados</h2>
+    <ul id="fileList" class="file-list"></ul>
+    </section>
+
+    <section class="panel">
+    <h2>Progreso</h2>
+    <div id="progress" class="progress">
+        <div id="progressBar" class="bar" style="width:0%"></div>
+    </div>
+    <div id="log" class="log"></div>
+    </section>
+</main>
+
+<footer class="foot">
+    <span>Hecho con ❤️ ·</span>
+</footer>
+
+<!-- Tu app -->
+<script src="app.js"></script>
+</body>
+</html>
